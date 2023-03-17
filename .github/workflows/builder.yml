@@ -1,0 +1,42 @@
+name: Build kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+       - name: Init the System
+         uses: actions/checkout@master
+
+       - name: remove pkg and setting repo
+         run: |
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl bc libncurses5 bison aria2
+
+       - name: download kernel
+         run: |
+             source config.sh
+             git clone $KERNEL_LINK -b $KERNEL_BRANCH work --depth=1
+
+       - name: setup builder
+         run: |
+              source config.sh
+              cd work
+              wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/setupbuilder.sh  | bash
+
+       - name: build kernel
+         run: |
+              source config.sh
+              cd work
+              wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/bake.sh  | bash
+
+       - name: Release recovery
+         uses: softprops/action-gh-release@v1
+         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+          tag_name: ${{ github.run_id }}
+          name: make kernel
+          files: work/kernel.zip
