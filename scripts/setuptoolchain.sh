@@ -6,6 +6,7 @@ T_CLANG="https://github.com/pkm774/android-kernel-tools"
 if [ $BUILDER == "gcc" ]; then
   git clone --depth=1 $T_GCC /opt/gcc
 elif [ $BUILDER == "clang" ]; then
+  git clone --depth=1 $T_GCC /opt/gcc
   git clone --depth=1 $T_CLANG /tmp/clang
   mkdir /opt/clang
   if [ $SDCLANG == "true" ]; then
