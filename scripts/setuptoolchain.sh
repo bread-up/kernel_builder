@@ -9,11 +9,12 @@ elif [ $BUILDER == "clang" ]; then
   git clone --depth=1 $T_GCC /opt/gcc
   git clone --depth=1 $T_CLANG /tmp/clang
   mkdir /opt/clang
-  if [ $SDCLANG == "true" ]; then
-    mv /tmp/clang/sdclang/linux-x86_64/* /opt/clang
-  fi
   if [ -z ${SDCLANG+x} ]; then
     mv /tmp/clang/clang/host/linux-x86/clan*/* /opt/clang
+  else
+    if [ $SDCLANG == "true" ]; then
+      mv /tmp/clang/sdclang/linux-x86_64/* /opt/clang
+    fi
   fi
 else
    echo "only gcc and clang are supported"
