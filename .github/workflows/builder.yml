@@ -42,3 +42,12 @@ jobs:
              source config.sh
              cd work
              wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/makezip.sh | bash
+
+       - name: Release kernel
+         uses: softprops/action-gh-release@v1
+         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+          tag_name: ${{ github.run_id }}
+          name: release kernel
+          files: work/kernel.zip
