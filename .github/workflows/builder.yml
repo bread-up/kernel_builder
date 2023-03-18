@@ -23,10 +23,16 @@ jobs:
        - name: Download Toolchain
          run: |
              source config.sh
-             wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/setuptoolchain.sh  | bash
+             wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/setuptoolchain.sh | bash
 
        - name: Make Defconfig
          run: |
              source config.sh
              cd work
              make $DEFCONFIG
+
+       - name: Compile Kernel
+         run: |
+             source config.sh
+             cd work
+             wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/compilekernel.sh | bash
