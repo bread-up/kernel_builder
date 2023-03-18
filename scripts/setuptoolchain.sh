@@ -7,7 +7,7 @@ if [ $BUILDER == "gcc" ]; then
   git clone --depth=1 $T_GCC /opt/gcc
 elif [ $BUILDER == "clang" ]; then
   git clone --depth=1 $T_CLANG /tmp/clang
-  if [ $SDCLANG == true ]; then
+  if [ $SDCLANG == "true" ]; then
     mv /tmp/clang/clang/host/linux-x86/clan* /opt/clang
   else
     mv /tmp/clang/sdclang/linux-x86_64 /opt/clang

@@ -6,4 +6,4 @@ export SOURCE_BRANCH="nethunter"
 
 # BUILDER
 export BUILDER="clang"
-export SDCLANG=true
+export SDCLANG="true"
