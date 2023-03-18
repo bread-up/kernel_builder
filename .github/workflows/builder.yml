@@ -24,3 +24,8 @@ jobs:
          run: |
              source config.sh
              wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/setuptoolchain.sh  | bash
+
+       - name: Make Defconfig
+         run: |
+             source config.sh
+             make $DEFCONFIG
