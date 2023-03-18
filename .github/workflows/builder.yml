@@ -13,4 +13,4 @@ jobs:
        - name: Download Necessary Packages
          run: |
              sudo apt update -y
-             sudo apt install bc zip make tar libncurses* gcc clang python3 openssl openssh util-linux perl binutils e2fsprogs udev build-essential bison flex libssl-dev libelf-dev -y
+             sudo apt install bc zip make tar libncurses* gcc clang python3 openssl util-linux perl binutils e2fsprogs udev build-essential bison flex libssl-dev libelf-dev -y
