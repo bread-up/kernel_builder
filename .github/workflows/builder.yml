@@ -10,3 +10,7 @@ jobs:
        - name: Init the System
          uses: actions/checkout@master
 
+       - name: Download necessary tools
+         run: |
+             sudo apt update -y
+             sudo apt install bc zip make tar libncurses* gcc clang python3 -y
