@@ -13,4 +13,9 @@ jobs:
        - name: Download Necessary Packages
          run: |
              sudo apt update -y
-             sudo apt install bc zip make tar libncurses* gcc clang python3 openssl util-linux perl binutils e2fsprogs udev build-essential bison flex libssl-dev libelf-dev -y
+             sudo apt install bc git zip make tar libncurses* gcc clang python3 openssl util-linux perl binutils e2fsprogs udev build-essential bison flex libssl-dev libelf-dev -y
+
+       - name: Download Kernel Source
+         run: |
+             source config.sh
+             git clone --depth=1 $KERNEL_SOURCE -b $SOURCE_BRANCH work
