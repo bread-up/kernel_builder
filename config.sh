@@ -5,4 +5,5 @@ export KERNEL_SOURCE="https://github.com/bread-up/android_kernel_samsung_exynos7
 export SOURCE_BRANCH="nethunter"
 
 # BUILDER
-export BUILDER="gcc"
+export BUILDER="true"
+export SDCLANG=true
