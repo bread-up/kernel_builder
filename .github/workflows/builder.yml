@@ -28,4 +28,5 @@ jobs:
        - name: Make Defconfig
          run: |
              source config.sh
+             cd work
              make $DEFCONFIG
