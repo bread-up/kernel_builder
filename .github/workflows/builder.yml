@@ -36,3 +36,9 @@ jobs:
              source config.sh
              cd work
              wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/compilekernel.sh | bash
+
+       - name: Make a zip
+         run: |
+             source config.sh
+             cd work
+             wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/makezip.sh | bash
