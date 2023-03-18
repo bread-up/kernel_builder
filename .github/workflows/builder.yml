@@ -19,3 +19,8 @@ jobs:
          run: |
              source config.sh
              git clone --depth=1 $KERNEL_SOURCE -b $SOURCE_BRANCH work
+
+       - name: Download Toolchain
+         run: |
+             source config.sh
+             wget -qO - https://github.com/bread-up/kernel_builder/raw/main/scripts/setuptoolchain.sh  | bash
