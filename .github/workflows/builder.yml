@@ -30,8 +30,6 @@ jobs:
              source config.sh
              cd work
              make $DEFCONFIG
-             mkdir out
-             cp .config out
 
        - name: Compile Kernel
          run: |
