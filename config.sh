@@ -16,4 +16,3 @@ export IMAGE_NAME=Image
 
 # OUTPUT
 export INCLUDE_KO=true
-export USE_ANYKERNEL3="false"

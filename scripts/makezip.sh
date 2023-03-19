@@ -11,8 +11,4 @@ pack_kernel () {
    mv kernel.zip ..
 }
 
-if [ $USE_ANYKERNEL3 == "true" ]; then
-  AK=true
-else
-  pack_kernel
-fi
+pack_kernel
