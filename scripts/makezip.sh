@@ -7,10 +7,10 @@ cd work
 if [ $USE_ANYKERNEL3 == "true" ]; then
   echo "ok"
 else
-  pack_kernel(WORK)
+  pack_kernel()
 fi
 
-pack_kernel(path) {
+pack_kernel() {
    mkdir /tmp/out
    mv out/arch/$ARCH/boot/$IMAGE_NAME /tmp/out
    if [ $INCLUDE_KO == true ]; then
@@ -21,5 +21,5 @@ pack_kernel(path) {
      cd /tmp/out
      7z -y a kernel.zip *
    fi
-   mv kernel.zip path
+   mv kernel.zip $WORK
 }
