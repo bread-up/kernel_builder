@@ -1,16 +1,5 @@
 #!/bin/bash
 
-WORK=../$(pwd)
-
-if [ $USE_ANYKERNEL3 == "true" ]; then
-  echo "ok"
-else 
-  cd /tmp
-  kernelpath
-  7z -y a kernel.zip echo $?
-  mv kernel.zip $WORK
-fi
-
 kernelpath() {
   NK=""
   if [ -z ${IMAGE_NAME+x} ]; then
@@ -22,3 +11,14 @@ kernelpath() {
   mv arch/$ARCH/boot/$NK /tmp
   return $NK
 }
+
+WORK=../$(pwd)
+
+if [ $USE_ANYKERNEL3 == "true" ]; then
+  echo "ok"
+else 
+  cd /tmp
+  kernelpath
+  7z -y a kernel.zip echo $?
+  mv kernel.zip $WORK
+fi
