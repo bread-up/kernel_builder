@@ -6,7 +6,8 @@ if [ $USE_ANYKERNEL3 == "true" ]; then
   echo "ok"
 else 
   cd /tmp
-  7z -y a kernel.zip kernelpath()
+  kernelpath
+  7z -y a kernel.zip echo $?
   mv kernel.zip $WORK
 fi
 
