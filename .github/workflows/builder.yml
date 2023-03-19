@@ -50,4 +50,4 @@ jobs:
          with:
           tag_name: ${{ github.run_id }}
           name: release kernel
-          files: work/kernel.zip
+          files: kernel.zip
