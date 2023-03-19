@@ -1,9 +1,13 @@
 #!/bin/bash
 
+cd ..
+WORK=$(pwd)
+cd work
+
 if [ $USE_ANYKERNEL3 == "true" ]; then
   echo "ok"
 else
-  pack_kernel(../$(pwd))
+  pack_kernel(WORK)
 fi
 
 pack_kernel(path) {
