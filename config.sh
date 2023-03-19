@@ -6,7 +6,6 @@ export SOURCE_BRANCH="stock"
 
 # BUILDER
 export BUILDER="gcc"
-#export SDCLANG="false"
 
 # SPECS
 export DEFCONFIG=exynos7870-m10lte_defconfig
@@ -16,4 +15,5 @@ export ANDROID_MAJOR_VERSION=q
 
 # OUTPUT
 export IMAGE_NAME=Image
+export INCLUDE_KO=true
 export USE_ANYKERNEL3="false"
