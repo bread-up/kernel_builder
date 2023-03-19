@@ -29,7 +29,9 @@ jobs:
          run: |
              source config.sh
              cd work
-             make $DEFCONFIG O=out
+             make $DEFCONFIG
+             mkdir out
+             cp .config out
 
        - name: Compile Kernel
          run: |
