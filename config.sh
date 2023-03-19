@@ -12,8 +12,8 @@ export DEFCONFIG=exynos7870-m10lte_defconfig
 export ARCH=arm64
 export PLATFORM_VERSION=10
 export ANDROID_MAJOR_VERSION=q
+export IMAGE_NAME=Image
 
 # OUTPUT
-export IMAGE_NAME=Image
 export INCLUDE_KO=true
 export USE_ANYKERNEL3="false"
