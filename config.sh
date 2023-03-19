@@ -15,5 +15,5 @@ export PLATFORM_VERSION=10
 export ANDROID_MAJOR_VERSION=q
 
 # OUTPUT
-export IMAGE_NAME="Image"
+export IMAGE_NAME=Image
 export USE_ANYKERNEL3="false"
