@@ -1,22 +1,23 @@
 #!/bin/bash env
 
 # SOURCE
-export KERNEL_SOURCE="https://github.com/bread-up/android_kernel_samsung_exynos7870"
-export SOURCE_BRANCH="stock"
+export KERNEL_SOURCE="https://github.com/bread-up/android_kernel_samsung_exynos7870" # kernel source should be uploaded in github or gitlab
+export SOURCE_BRANCH="pk-Q" # branch of source
 
 # BUILDER
-export BUILDER="gcc"
-export USE_CUSTOM_CLANG=""
-#export CLANG_SOURCE=""
-#export CLANG_SOURCE_BRANCH=""
+export BUILDER="gcc" # use gcc or clang
+#export USE_CUSTOM_CLANG="true" #if you want to use custom clang then remove #
+#export CLANG_SOURCE="" # add link of your custom clang should be in github or gitlab
+#export CLANG_SOURCE_BRANCH="" # add branch of clang source
 
 # SPECS
+# your device spec
 export DEFCONFIG=exynos7870-m10lte_defconfig
 export ARCH=arm64
 export PLATFORM_VERSION=10
 export ANDROID_MAJOR_VERSION=q
-export IMAGE_NAME=Image
-export CF=--Werror
+# add all device stuff
+export IMAGE_NAME=Image # Image name: Image, Image.gz, Image.gz-dtb
 
 # OUTPUT
-export INCLUDE_KO="true"
+export INCLUDE_KO="true" # include ko module
