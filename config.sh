@@ -21,4 +21,4 @@ export IMAGE_NAME=Image # Image name: Image, Image.gz, Image.gz-dtb
 
 # OUTPUT
 export INCLUDE_KO="false" # include ko module
-export USE_ANYKERNEL="true"
+export USE_ANYKERNEL="true" # add it to make a flashable file and edit anykernel.sh in Anykernel3 folder
