@@ -6,7 +6,7 @@ T_CLANG="https://github.com/pkm774/android-kernel-tools"
 if [ $BUILDER == "gcc" ]; then
   git clone --depth=1 $T_GCC /opt/gcc
 elif [ $BUILDER == "clang" ]; then
-    if [ -z ${USE_CUSTOM_CLANG+x} && $USE_CUSTOM_CLANG == "false" ]; then
+    if [ -z ${USE_CUSTOM_CLANG+x} ]; then
       git clone --depth=1 $T_GCC /opt/gcc
       git clone --depth=1 $T_CLANG /tmp/clang
       mkdir /opt/clang
@@ -14,6 +14,4 @@ elif [ $BUILDER == "clang" ]; then
     else
       git clone --depth=1 $CLANG_SOURCE -b $CLANG_SOURCE_BRANCH /opt/clang
     fi
-else
-   echo "only gcc and clang are supported"
 fi
