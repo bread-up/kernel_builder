@@ -12,6 +12,8 @@ elif [ $BUILDER == "clang" ]; then
       mkdir /opt/clang
       mv /tmp/clang/clang/host/linux-x86/clan*/* /opt/clang
     else
-      git clone --depth=1 $CLANG_SOURCE -b $CLANG_SOURCE_BRANCH /opt/clang
+      if [ $USE_CUSTOM_CLANG == "true" ]; then
+        git clone --depth=1 $CLANG_SOURCE -b $CLANG_SOURCE_BRANCH /opt/clang
+      fi
     fi
 fi
