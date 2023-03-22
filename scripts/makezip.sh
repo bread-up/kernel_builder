@@ -15,7 +15,7 @@ pack_kernel () {
      fi
      cd ../out
    fi
-   7z -y a kernel.zip *
+   zip -r kernel.zip *
    mv kernel.zip ..
 }
 
