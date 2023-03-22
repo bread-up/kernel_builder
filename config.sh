@@ -2,7 +2,7 @@
 
 # SOURCE
 export KERNEL_SOURCE="https://github.com/bread-up/android_kernel_samsung_exynos7870" # kernel source should be uploaded in github or gitlab
-export SOURCE_BRANCH="stock" # branch of source
+export SOURCE_BRANCH="pk" # branch of source
 
 # BUILDER
 export BUILDER="gcc" # use gcc or clang
