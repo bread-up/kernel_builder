@@ -20,4 +20,5 @@ export ANDROID_MAJOR_VERSION=q
 export IMAGE_NAME=Image # Image name: Image, Image.gz, Image.gz-dtb
 
 # OUTPUT
-export INCLUDE_KO="true" # include ko module
+export INCLUDE_KO="false" # include ko module
+export USE_ANYKERNEL="true"
